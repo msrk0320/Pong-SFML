@@ -21,11 +21,9 @@ namespace Gameplay
         Ball();
         void update();
         void render(RenderWindow* game_window);
-        void loadTexture();
-        void initializeVariables();
 
     private:
-        float ball_speed = .5f;
+        float ball_speed = .05f;
         Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
     private:
