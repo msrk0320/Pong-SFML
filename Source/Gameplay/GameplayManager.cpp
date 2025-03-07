@@ -1,9 +1,6 @@
 #include "../../Header/Gameplay/GameplayManager.h"
-using namespace Gameplay;
 
-GameplayManager::GameplayManager() {
-	initialize();
-}
+using namespace Gameplay;
 
 void GameplayManager::initialize() {
 	ball = new Ball();
@@ -13,7 +10,11 @@ void GameplayManager::initialize() {
 
 void Gameplay::GameplayManager::update()
 {
-
+	ball->update();
+	player1->update(event_manager->isKeyPressed(Keyboard::W),
+		event_manager->isKeyPressed(Keyboard::S));
+	player2->update(event_manager->isKeyPressed(Keyboard::Up),
+		event_manager->isKeyPressed(Keyboard::Down));
 }
 
 void Gameplay::GameplayManager::render(RenderWindow* game_window)
@@ -23,5 +24,8 @@ void Gameplay::GameplayManager::render(RenderWindow* game_window)
 	player2->render(game_window);
 }
 
-
-
+GameplayManager::GameplayManager(EventManager* eventManager)
+{
+	initialize();
+	event_manager = eventManager;
+}

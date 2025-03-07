@@ -1,6 +1,9 @@
 #pragma once
 #include "../../Header/Gameplay/Ball/Ball.h"
 #include "../../Header/Gameplay/Paddle/Paddle.h"
+#include "../../Header/Event/EventManager.h"
+
+using namespace Event;
 
 namespace Gameplay
 {
@@ -19,9 +22,11 @@ namespace Gameplay
 
 	private:
 		void initialize();
+		EventManager* event_manager;
 
 	public:
-		GameplayManager();
+		//Make this eventManager different spell than event_Manager
+		GameplayManager(EventManager* eventManager);
 		void update();
 		void render(RenderWindow* game_window);
 	};
