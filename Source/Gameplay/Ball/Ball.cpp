@@ -10,7 +10,6 @@ Ball::Ball()
 
 void Ball::update()
 {
-    pong_ball_sprite.setPosition(position_x, position_y);
     move();
 }
 
@@ -33,7 +32,7 @@ void Ball::initializeVariables()
     pong_ball_sprite.setPosition(position_x, position_y); // Set position
 }
 
-void Gameplay::Ball::move()
+void Ball::move()
 {
     pong_ball_sprite.move(velocity);
 }
