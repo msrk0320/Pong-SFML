@@ -3,8 +3,12 @@
 #include "../../Header/Gameplay/Paddle/Paddle.h"
 #include "../../Header/Event/EventManager.h"
 #include "../../Header/Gameplay/Boundary/Boundary.h"
+#include "../../Header/Utility/TimeService.h"
+#include "../../Header/UI/UIService.h"
 
+using namespace Utility;
 using namespace Event;
+using namespace UI;
 
 namespace Gameplay
 {
@@ -25,11 +29,15 @@ namespace Gameplay
 	private:
 		void initialize();
 		EventManager* event_manager;
+		TimeService* time_service;
+		UIService* uiService=new UIService;
 
 	public:
 		//Make this eventManager different spell than event_Manager
 		GameplayManager(EventManager* eventManager);
 		void update();
+		void updateScore();
+		void resetPlayers();
 		void render(RenderWindow* game_window);
 	};
 }

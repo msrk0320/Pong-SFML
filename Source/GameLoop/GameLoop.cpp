@@ -1,9 +1,13 @@
 #include "../../Header/GameLoop/GameLoop.h"
+#include "../../Header/Sound/SoundManager.h"
+
+using namespace Sound;
 
 namespace Core
 {
-    
     void GameLoop::initialize() {
+        SoundManager::Initialize();
+        SoundManager::PlayBackgroundMusic();// Let the music begin!
         game_window_manager = new GameWindowManager();
         event_manager = new EventManager();
         game_window_manager->initialize();
