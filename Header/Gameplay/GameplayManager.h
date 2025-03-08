@@ -2,6 +2,7 @@
 #include "../../Header/Gameplay/Ball/Ball.h"
 #include "../../Header/Gameplay/Paddle/Paddle.h"
 #include "../../Header/Event/EventManager.h"
+#include "../../Header/Gameplay/Boundary/Boundary.h"
 
 using namespace Event;
 
@@ -19,6 +20,7 @@ namespace Gameplay
 		Ball* ball;
 		Paddle* player1;
 		Paddle* player2;
+		Boundary* boundary;
 
 	private:
 		void initialize();
